@@ -721,6 +721,7 @@ textarea {
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 20px;
+   overflow:auto;
 }
 
 .calendar-header {
@@ -784,7 +785,9 @@ textarea {
     align-items: center;
     border-left: 4px solid #4CAF50;
 }
-
+#date{
+        min-width: 200px;
+}
 /* --------------------
    Footer
 --------------------- */
@@ -863,6 +866,7 @@ footer {
         max-width: 95%;
     }
 }
+
 
 
 
