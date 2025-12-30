@@ -1211,7 +1211,7 @@ if (typeof logout === 'undefined') {
     window.logout = function () {
         sessionStorage.removeItem('adminLoggedIn');
         sessionStorage.removeItem('adminEmail');
-        window.location.href = '/';
+        window.location.href = 'index.html';
     };
 }
 
@@ -1231,4 +1231,5 @@ if (typeof togglePasswordVisibility === 'undefined') {
     window.togglePasswordVisibility = togglePasswordVisibility || function () {
         console.log('togglePasswordVisibility not available on this page');
     };
+
 }
