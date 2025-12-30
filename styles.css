@@ -5,12 +5,11 @@ body {
     font-family: "Segoe UI", Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: green;
     color: #000080; /* Navy Blue */
-    background-image: url(images/Background.jpeg');
+    background-image: url('images/Background.jpeg');
     background-size: cover;
     background-attachment: fixed;
-       background-color: #002eff;
 
 }
 
@@ -864,6 +863,7 @@ footer {
         max-width: 95%;
     }
 }
+
 
 
 
