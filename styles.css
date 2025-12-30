@@ -126,7 +126,7 @@ section {
     font-size: 1.2em;
     font-weight: bold;
     cursor: pointer;
-    min-width: 300px;
+    min-width: 220px;
     width: 100%;
     transition: all 0.3s ease;
 }
@@ -141,7 +141,7 @@ section {
     font-size: 1.2em;
     font-weight: bold;
     cursor: pointer;
-    min-width: 300px;
+    min-width: 220px;
     width: 100%;
     transition: all 0.3s ease;
 }
@@ -157,7 +157,7 @@ section {
     font-size: 1.2em;
     font-weight: bold;
     cursor: pointer;
-    min-width: 300px;
+    min-width: 220px;
     width: 100%;
     transition: all 0.3s ease;
 }
@@ -863,6 +863,7 @@ footer {
         max-width: 95%;
     }
 }
+
 
 
 
