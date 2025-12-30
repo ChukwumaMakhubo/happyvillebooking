@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyVille Booking Portal</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+
+    <!-- Bootstrap (CDN instead of MVC libs) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= HEADER / NAV ================= -->
+<header id="mainNav">
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="HappyVille Logo">
+        </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="navbarContent" class="navbar-collapse collapse">
+            <ul class="navbar-nav ms-auto">
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="javascript:void(0)" onclick="openLoginModal()" class="login-link">
+                        Admin Login
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main>
+
+<section id="hero">
+    <h1>Welcome to HappyVille</h1>
+    <p>A joyful indoor play destination where families can jump, play and create unforgettable memories.</p>
+    <p><strong>Launch Promotion:</strong> First 25 customers get grip socks for R5!</p>
+</section>
+
+<section id="activities">
+    <h2>Activities & Experiences</h2>
+        <div class="activity-list">
+            <div class="activity">
+                <h3>General Admission Play Sessions (Ages 4+)</h3>
+                <ul>
+                    <li>30 minutes: R50/person, slots every 30 mins (09:30-18:30), capacity 120-150.</li>
+                    <li>1 hour: R90/person, slots 09:00-18:00, capacity 40.</li>
+                    <li>2 hours: R140/person, blocks 09:00-19:00, capacity 40.</li>
+                </ul>
+                <p>Ages 4-6 require parent inside.</p>
+            </div>
+            <div class="activity">
+                <h3>Toddler Play Sessions (Ages 0-4)</h3>
+                <ul>
+                    <li>30 minutes: R50/toddler, slots 09:30 & 10:30, capacity 20.</li>
+                    <li>1 hour: R90/toddler, slots 09:00-11:00, capacity 20.</li>
+                </ul>
+                <p>Parent must remain inside toddler zone.</p>
+            </div>
+            <div class="activity">
+                <h3>Birthday Party Packages (Pre-bookings only)</h3>
+                <ul>
+                    <li>Happy Jump Party: 10 kids, 2 hours, R1,500 (deposit R500).</li>
+                    <li>Mega Happy Party: 10 kids, 2 hours, R2,900 (deposit R800).</li>
+                </ul>
+                <p>Includes party area, juice, host. Add-ons: cake, extra kids, etc.</p>
+            </div>
+            <div class="activity">
+                <h3>Add-Ons</h3>
+                <ul>
+                    <li>Café Meal Bundles: Available as add-on.</li>
+                    <li>Grip Socks: Mandatory, R20/pair (R5 for first 25/day).</li>
+                </ul>
+            </div>
+        </div>
+
+</section>
+
+<section id="pricing">
+    <h2>Pricing Summary</h2>
+        <div id="pricingSection">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Duration</th>
+                    <th>Price</th>
+                    <th>Capacity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>General Admission 30min</td><td>30min</td><td>R50/person</td><td>120-150</td></tr>
+                <tr><td>General Admission 1hr</td><td>1hr</td><td>R90/person</td><td>40</td></tr>
+                <tr><td>General Admission 2hr</td><td>2hr</td><td>R140/person</td><td>40</td></tr>
+                <tr><td>Toddler 30min</td><td>30min</td><td>R50/toddler</td><td>20</td></tr>
+                <tr><td>Toddler 1hr</td><td>1hr</td><td>R90/toddler</td><td>20</td></tr>
+                <tr><td>Happy Jump Party</td><td>2hr</td><td>R1,500</td><td>10 kids</td></tr>
+                <tr><td>Mega Happy Party</td><td>2hr</td><td>R2,900</td><td>10 kids</td></tr>
+                <tr><td>Grip Socks</td><td>N/A</td><td>R20 (R5 promo)</td><td>N/A</td></tr>
+            </tbody>
+        </table>
+
+        </div>
+</section>
+
+<section id="booking">
+    <h2>Book Your Session</h2>
+
+    <button class="book-now-btn" onclick="openBookingModal()">Book Now</button>
+
+    <!-- BOOKING MODAL -->
+            <div id="bookingModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeBookingModal()">&times;</span>
+
+                <h2>Book Your Session</h2>
+
+                <div class="modal-body">
+
+
+                    <form id="bookingForm">
+                        <!-- Personal Details -->
+                        <div class="form-section">
+                            <h3>Your Details</h3>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" required placeholder="Full name">
+
+                            <label for="phone">Phone:</label>
+                            <input type="tel" id="phone" required placeholder="071 234 5678">
+
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" required placeholder="your@email.com">
+                        </div>
+
+                        <!-- Activity Selection -->
+                        <div class="form-section">
+                            <h3>Choose Activity</h3>
+                            <label for="activity">Activity:</label>
+                            <select id="activity" required>
+                                <option value="">Select Activity</option>
+                                <option value="general-30" data-duration="30" data-price="80">General Admission 30min - R80</option>
+                                <option value="general-1" data-duration="60" data-price="120">General Admission 1hr - R120</option>
+                                <option value="general-2" data-duration="120" data-price="200">General Admission 2hr - R200</option>
+                                <option value="toddler-30" data-duration="30" data-price="60">Toddler 30min - R60</option>
+                                <option value="toddler-1" data-duration="60" data-price="90">Toddler 1hr - R90</option>
+                                <option value="happy-party" data-duration="90" data-price="1500">Happy Jump Party - R1500</option>
+                                <option value="mega-party" data-duration="120" data-price="2500">Mega Happy Party - R2500</option>
+                            </select>
+
+                            <!-- Show selected activity price -->
+                            <div id="priceDisplay" class="price-display" style="display: none;">
+                                <strong>Price:</strong> R<span id="activityPrice">0</span> per person
+                                <br>
+                                <small id="durationText"></small>
+                            </div>
+                        </div>
+
+                        <!-- Date & Time Selection -->
+                        <div class="form-section">
+                            <h3>Choose Date & Time</h3>
+
+                            <!-- Date Picker -->
+                            <label for="date">Select Date:</label>
+                            <div class="date-picker-container">
+                                <input type="date" id="date" required
+                                       min="@DateTime.Today.ToString("yyyy-MM-dd")"
+                                       max="@DateTime.Today.AddDays(60).ToString("yyyy-MM-dd")">
+                                <button type="button" id="todayBtn" class="small-btn">Today</button>
+                                <button type="button" id="tomorrowBtn" class="small-btn">Tomorrow</button>
+                                <button type="button" id="weekendBtn" class="small-btn">Next Weekend</button>
+                            </div>
+
+                            <!-- Calendar View (Optional) -->
+                            <div id="calendarPreview" class="calendar-preview">
+                                <div class="calendar-header">
+                                    <button type="button" id="prevMonth">&lt;</button>
+                                    <h4 id="currentMonth">@DateTime.Now.ToString("MMMM yyyy")</h4>
+                                    <button type="button" id="nextMonth">&gt;</button>
+                                </div>
+                                <div id="miniCalendar" class="mini-calendar">
+                                    <!-- Calendar will be populated by JavaScript -->
+                                </div>
+                            </div>
+
+                            <!-- Time Slots -->
+                            <label>Available Time Slots:</label>
+                            <div id="timeSlots" class="time-slots-container">
+                                <div class="time-slots-loading">
+                                    Select a date to see available times
+                                </div>
+                                <!-- Time slots will be populated here -->
+                            </div>
+
+                            <!-- Selected Time Display -->
+                            <div id="selectedTimeDisplay" class="selected-time" style="display: none;">
+                                <strong>Selected:</strong>
+                                <span id="selectedDate">-</span> at
+                                <span id="selectedTime">-</span>
+                                <button type="button" id="clearTime" class="small-btn">Change</button>
+                            </div>
+
+                            <!-- Hidden inputs for selected time -->
+                            <input type="hidden" id="selectedDateTime" name="selectedDateTime">
+                        </div>
+
+                        <!-- Group Size -->
+                        <div class="form-section">
+                            <h3>Group Size</h3>
+                            <div class="group-size">
+                                <div class="group-input">
+                                    <label for="kids">Number of Kids:</label>
+                                    <input type="number" id="kids" min="0" max="20" value="1" required>
+                                    <div class="counter">
+                                        <button type="button" class="counter-btn minus" data-target="kids">-</button>
+                                        <span id="kidsCount">1</span>
+                                        <button type="button" class="counter-btn plus" data-target="kids">+</button>
+                                    </div>
+                                </div>
+
+                                <div class="group-input">
+                                    <label for="adults">Number of Adults:</label>
+                                    <input type="number" id="adults" min="0" max="20" value="1" required>
+                                    <div class="counter">
+                                        <button type="button" class="counter-btn minus" data-target="adults">-</button>
+                                        <span id="adultsCount">1</span>
+                                        <button type="button" class="counter-btn plus" data-target="adults">+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Total Calculation -->
+                            <div id="totalCalculation" class="total-calculation">
+                                <div class="total-row">
+                                    <span>Kids (<span id="totalKids">1</span> × R<span id="kidPrice">0</span>):</span>
+                                    <span>R<span id="kidsTotal">0</span></span>
+                                </div>
+                                <div class="total-row">
+                                    <span>Adults (<span id="totalAdults">1</span> × R<span id="adultPrice">0</span>):</span>
+                                    <span>R<span id="adultsTotal">0</span></span>
+                                </div>
+                                <div class="total-row">
+                                    <span>Grip Socks (<span id="totalPeople">2</span> × R20):</span>
+                                    <span>R<span id="socksTotal">40</span></span>
+                                </div>
+                                <div class="total-row grand-total">
+                                    <strong>Total:</strong>
+                                    <strong>R<span id="grandTotal">0</span></strong>
+                                </div>
+                                <small class="text-muted">* Grip socks: R20 each (R5 promo applied during checkout)</small>
+                            </div>
+                        </div>
+
+                        <!-- Terms & Notes -->
+                        <div class="form-section">
+                            <h3>Terms & Notes</h3>
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="gripSocks" required>
+                                <label for="gripSocks" class="checkbox">
+                                    I agree to purchase mandatory grip socks (R20 each, or R5 promo for special offers).
+                                </label>
+                            </div>
+
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="waiver" required>
+                                <label for="waiver" class="checkbox">
+                                    I agree to the <a href="#" onclick="showWaiverModal()">waiver terms</a>.
+                                </label>
+                            </div>
+
+                            <label for="notes">Allergy/Birthday Notes (optional):</label>
+                            <textarea id="notes" placeholder="Any allergies, birthday details, or special requests..."></textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="form-submit">
+                            <button type="submit" class="submit-btn">
+                                <span id="submitText">Submit Booking</span>
+                                <span id="totalPrice">R0</span>
+                            </button>
+                            <p class="form-note">You'll receive a confirmation email within a few minutes</p>
+                        </div>
+                    </form>
+
+                    <!-- Waiver Modal (Hidden) -->
+                    <div id="waiverModal" class="modal" style="display: none;">
+                        <div class="modal-content">
+                            <span class="close-btn" onclick="closeWaiverModal()">&times;</span>
+                            <h2>Waiver Terms & Conditions</h2>
+                            <div class="waiver-content">
+                                <!-- Your waiver content here -->
+                                <p>I understand that trampoline activities involve risk...</p>
+                            </div>
+                            <button type="button" onclick="closeWaiverModal()" class="submit-btn">I Understand</button>
+                        </div>
+                    </div>
+                <div id="paymentSection" style="display:none;">
+                    <p>Booking details submitted. Proceed to payment:</p>
+                    <button id="payNow">Pay Now via PayFast</button>
+                </div>
+
+                <p id="formMessage"></p>
+
+                </div>
+
+            </div>
+        </div>
+
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: booking@happyville.co.za</p>
+    <p>Phone: 073 368 0808</p>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>&copy; 2025 HappyVille. Safe, energetic, and fun for all!</p>
+</footer>
+
+<!-- ================= ADMIN LOGIN MODAL ================= -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+
+                <h2>Admin Login</h2>
+                <p class="modal-subtitle">Restricted access for authorized personnel only</p>
+
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <label for="loginEmail">Admin Email:</label>
+                        <input type="email" id="loginEmail" required
+                               placeholder="admin@yourdomain.com">
+
+                        <label for="loginPassword">Password:</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="loginPassword" required
+                                   placeholder="Enter admin password">
+                            <button type="button" class="show-password"
+                                    onclick="togglePasswordVisibility()">
+                                👁️
+                            </button>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox remember-me">
+                                <input type="checkbox" id="rememberMe">
+                                Keep me logged in
+                            </label>
+
+                            <a href="javascript:void(0)" onclick="showForgotPassword()"
+                               class="forgot-password">
+                                Forgot password?
+                            </a>
+                        </div>
+
+                        <button type="submit" class="submit-btn login-btn">
+                            Login as Admin
+                        </button>
+                    </form>
+
+                    <!-- Forgot Password Section -->
+                    <div id="forgotPasswordSection" style="display: none;">
+                        <h3>Admin Password Reset</h3>
+                        <p>Enter your admin email to receive a password reset link.</p>
+                        <p class="warning-text">⚠️ This will notify all administrators</p>
+
+                        <form id="forgotPasswordForm">
+                            <label for="resetEmail">Admin Email:</label>
+                            <input type="email" id="resetEmail" required
+                                   placeholder="admin@yourdomain.com">
+
+                            <div class="form-actions">
+                                <button type="button" class="secondary-btn"
+                                        onclick="hideForgotPassword()">
+                                    Back to Login
+                                </button>
+                                <button type="submit" class="submit-btn">
+                                    Request Reset
+                                </button>
+                            </div>
+                        </form>
+
+                        <p id="resetMessage" class="form-message"></p>
+                    </div>
+
+                    <p id="loginMessage" class="form-message"></p>
+
+                    <div class="admin-note">
+                        <p><strong>Note:</strong> This area is for administrative purposes only.</p>
+                        <p>If you're a customer, please use the booking system above.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<!-- ================= JS ================= -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="pages/landing.js"></script>
+
+<script>
+    // Replace Razor dates
+    const dateInput = document.getElementById('date');
+    const today = new Date();
+    const maxDate = new Date();
+    maxDate.setDate(today.getDate() + 60);
+
+    dateInput.min = today.toISOString().split('T')[0];
+    dateInput.max = maxDate.toISOString().split('T')[0];
+
+
+
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+        const password = document.getElementById('loginPassword').value;
+        const rememberMe = document.getElementById('rememberMe').checked;
+
+        const loginMessage = document.getElementById('loginMessage');
+
+        // Check lockout status
+        const now = Date.now();
+        if (lockoutUntil > now) {
+            const remainingTime = Math.ceil((lockoutUntil - now) / 1000 / 60);
+            loginMessage.textContent = `Too many failed attempts. Try again in ${remainingTime} minutes.`;
+            loginMessage.className = 'form-message error';
+            return;
+        }
+
+        // Basic validation
+        if (!email || !password) {
+            loginMessage.textContent = 'Please enter both email and password';
+            loginMessage.className = 'form-message error';
+            return;
+        }
+
+        // Show loading state
+        const submitBtn = document.querySelector('.login-btn');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Authenticating...';
+        submitBtn.disabled = true;
+
+        // Simulate API call to your backend
+        setTimeout(() => {
+            // REPLACE THIS WITH ACTUAL ADMIN AUTHENTICATION
+            // This is just a mock example
+
+            // List of valid admin emails (configure these in your actual backend)
+            const validAdminEmails = [
+                'admin@example.com',
+                'supervisor@example.com',
+                'manager@example.com'
+            ];
+
+            // Check if email is in admin list and password matches
+            // In real implementation, this would be a server-side check
+            const isValidAdmin = validAdminEmails.includes(email);
+            const isCorrectPassword = password === 'admin123'; // Change this!
+            if (isValidAdmin && isCorrectPassword) {
+                // Successful login
+                loginMessage.textContent = '✓ Login successful! Redirecting to admin panel...';
+                loginMessage.className = 'form-message success';
+
+                // Store session
+                sessionStorage.setItem('adminLoggedIn', 'true');
+                sessionStorage.setItem('adminEmail', email);
+
+                if (rememberMe) {
+                    localStorage.setItem('adminRememberedEmail', email);
+                }
+
+                // Reset login attempts on success
+                loginAttempts = 0;
+
+                // Redirect to admin dashboard or update UI
+                setTimeout(() => {
+                    closeLoginModal();
+                    window.location.href = 'admin.html';
+                }, 1500);
+
+            } else {
+                // Failed login
+                loginAttempts++;
+
+                if (loginAttempts >= MAX_LOGIN_ATTEMPTS) {
+                    lockoutUntil = now + LOCKOUT_TIME;
+                    loginMessage.textContent = `Too many failed attempts. Account locked for 5 minutes.`;
+                } else {
+                    loginMessage.textContent = `Invalid credentials. ${MAX_LOGIN_ATTEMPTS - loginAttempts} attempts remaining.`;
+                }
+
+                loginMessage.className = 'form-message error';
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        }, 1000);
+    });
+
+
+
+</script>
+
+</body>
+</html>

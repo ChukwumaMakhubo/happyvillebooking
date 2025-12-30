@@ -1,0 +1,864 @@
+/* --------------------
+   Global Styles
+--------------------- */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #000080; /* Navy Blue */
+    background-image: url('../images/background.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+main{
+    padding:2em;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+/* --------------------
+   Header & Navbar
+--------------------- */
+header {
+    background-color: #FFD700 !important; /* Yellow */
+    padding: 10px 30px;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.logo img {
+    height: 55px;
+    border-radius: 50px;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+    .navbar-nav li {
+        list-style: none;
+        margin-left: 20px;
+    }
+
+    .navbar-nav a {
+        color: #000080;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+        .navbar-nav a:hover {
+            background-color: #FFA500; /* Orange */
+            color: white;
+        }
+
+/* --------------------
+   Hero Section
+--------------------- */
+#hero {
+    background-color: #00FFFF; /* Aqua */
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+    #hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    #hero p {
+        font-size: 1.1rem;
+        max-width: 800px;
+        margin: 10px auto;
+    }
+
+/* --------------------
+   Sections
+--------------------- */
+section {
+    background: rgba(255, 255, 255, 0.6); /* Less transparent for readability */
+    padding: 40px 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+    section h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: bold;
+        color: #000080;
+    }
+
+.book-now-btn {
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(to right, #FFA500, #FF8C00);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 300px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+#todayBtn {
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(to right, #FFA500, #FF8C00);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 300px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+#tomorrowBtn {
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(to right, #002eff, #009fff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 300px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+
+#weekendBtn {
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(to right, #FFA500, #FF8C00);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 300px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+
+
+/* --------------------
+   Activities
+--------------------- */
+.activity-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.activity {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 5px solid #FFD700;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .activity:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .activity h3 {
+        margin-bottom: 10px;
+        color: #000080;
+    }
+
+/* --------------------
+   Pricing Table
+--------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #000080;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #FFD700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: #000080;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#pricingSection {
+    overflow-y: auto;
+}
+
+/* --------------------
+   BOOKING FORM - INTEGRATED STYLES
+--------------------- */
+/* Form container */
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Form labels */
+label {
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    display: block;
+    color: #000080;
+}
+
+/* Form inputs */
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+    input:focus, select:focus, textarea:focus {
+        border-color: #FFD700;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+    }
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Form Sections */
+.form-section {
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #FFD700;
+}
+
+    .form-section h3 {
+        margin-top: 0;
+        color: #000080;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+    }
+
+/* Price Display */
+.price-display {
+    background: #e8f5e9;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border-left: 4px solid #4CAF50;
+}
+
+/* Date Picker Container */
+.date-picker-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+    .date-picker-container input[type="date"] {
+        flex: 1;
+        min-width: 200px;
+    }
+
+.quick-date-btn {
+    padding: 8px 15px;
+    background: #e0e0e0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.3s ease;
+}
+
+    .quick-date-btn:hover {
+        background: #FFD700;
+        color: #000080;
+    }
+
+/* Time Slots */
+.time-slots-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.time-slot {
+    padding: 12px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: white;
+}
+
+    .time-slot:hover:not(.unavailable) {
+        border-color: #FFD700;
+        background: #fffde7;
+    }
+
+    .time-slot.selected {
+        border-color: #4CAF50;
+        background: #4CAF50;
+        color: white;
+    }
+
+    .time-slot.unavailable {
+        background: #f5f5f5;
+        color: #999;
+        cursor: not-allowed;
+        border-color: #eee;
+    }
+
+    .time-slot .spots {
+        font-size: 0.8em;
+        color: #666;
+        margin-top: 5px;
+    }
+
+    .time-slot.selected .spots {
+        color: #e0ffe0;
+    }
+
+/* Group Size */
+.group-size {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.group-input {
+    flex: 1;
+    min-width: 200px;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.counter-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    background: white;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #000080;
+    transition: all 0.2s;
+}
+
+    .counter-btn:hover {
+        background: #FFD700;
+        border-color: #FFD700;
+    }
+
+.counter span {
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Total Calculation */
+.total-calculation {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #eee;
+    margin-top: 20px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+    .total-row.grand-total {
+        border-top: 2px solid #4CAF50;
+        margin-top: 15px;
+        padding-top: 15px;
+        font-size: 1.2em;
+        color: #000080;
+    }
+
+/* Checkboxes - UNIFIED STYLE */
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+    .checkbox-container input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        margin-top: 3px;
+        flex-shrink: 0;
+    }
+
+    .checkbox-container label {
+        cursor: pointer;
+        line-height: 1.5;
+        margin: 0;
+        flex: 1;
+    }
+
+/* Unified checkbox class for all checkboxes */
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+    .checkbox input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+/* Submit Button */
+.form-submit {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.submit-btn {
+    
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(to right, #FFA500, #FF8C00);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 300px;
+    width:100%;
+    transition: all 0.3s ease;
+}
+
+    .submit-btn:hover {
+        background: linear-gradient(to right, #FF8C00, #FF6B00);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+    }
+
+.form-note {
+    margin-top: 10px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* --------------------
+   MODAL STYLES (for login and forms)
+--------------------- */
+/* Modal overlay */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Modal box */
+.modal-content {
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+    .modal-content h2 {
+        margin-top: 1em;
+        padding: 0 20px;
+        color: #000080;
+        text-align:center;
+        margin-bottom:1em;
+    }
+
+.modal-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+    line-height: 1;
+    z-index: 10;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+
+    .close-btn:hover {
+        color: #000080;
+        transform: scale(1.1);
+    }
+
+/* --------------------
+   ADMIN LOGIN Specific
+--------------------- */
+.modal-subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.warning-text {
+    color: #ff6b35;
+    font-size: 13px;
+    background-color: #fff5f2;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border-left: 3px solid #ff6b35;
+    margin: 10px 0 20px;
+}
+
+.admin-note {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd;
+    font-size: 13px;
+    color: #777;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+    .admin-note p {
+        margin: 8px 0;
+    }
+
+    .admin-note strong {
+        color: #555;
+    }
+
+/* Password Wrapper */
+.password-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+    .password-wrapper input {
+        width: 100%;
+        padding: 12px 45px 12px 12px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+    }
+
+        .password-wrapper input:focus {
+            border-color: #FFD700;
+        }
+
+.show-password {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    color: #666;
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .show-password:hover {
+        color: #000080;
+        background-color: rgba(255, 215, 0, 0.1);
+        border-radius: 50%;
+    }
+
+/* Form options row */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+    .form-options .checkbox {
+        margin: 0;
+    }
+
+.forgot-password {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+    .forgot-password:hover {
+        text-decoration: underline;
+    }
+
+/* --------------------
+   Calendar Preview (Optional)
+--------------------- */
+
+.day-header {
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.day.today {
+    background: #FFD700;
+    color: #000080;
+    font-weight: bold;
+}
+
+.no-slots {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 20px;
+    background: #fff3cd;
+    border-radius: 8px;
+    border: 2px dashed #ffc107;
+}
+
+.calendar-preview {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+    .calendar-header button {
+        background: #FFD700;
+        color: #000080;
+        border: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+.mini-calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+    .mini-calendar .day {
+        padding: 8px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 4px;
+        border: 1px solid #eee;
+    }
+
+        .mini-calendar .day:hover {
+            background: #fffde7;
+        }
+
+        .mini-calendar .day.selected {
+            background: #FFD700;
+            color: #000080;
+            font-weight: bold;
+        }
+
+        .mini-calendar .day.unavailable {
+            color: #ccc;
+            cursor: not-allowed;
+            background: #f5f5f5;
+        }
+
+/* --------------------
+   Selected Time Display
+--------------------- */
+.selected-time {
+    background: #e8f5e9;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid #4CAF50;
+}
+
+/* --------------------
+   Footer
+--------------------- */
+footer {
+    background-color: #000080;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* --------------------
+   Responsive Design
+--------------------- */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 25px 20px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    .form-section {
+        padding: 15px;
+    }
+
+    .group-size {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .group-input {
+        min-width: 100%;
+    }
+
+    .time-slots-container {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .submit-btn {
+        min-width: 100%;
+        padding: 12px 20px;
+    }
+
+    .date-picker-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+        .date-picker-container input[type="date"] {
+            min-width: 100%;
+        }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .time-slots-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .modal-content {
+        max-width: 95%;
+    }
+}
