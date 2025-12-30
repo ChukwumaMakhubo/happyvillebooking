@@ -7,7 +7,7 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #000080; /* Navy Blue */
-    background-image: url('./images/background.jpeg');
+    background-image: url('/images/background.jpeg');
     background-size: cover;
     background-attachment: fixed;
 }
@@ -862,4 +862,5 @@ footer {
         max-width: 95%;
     }
 }
+
 
